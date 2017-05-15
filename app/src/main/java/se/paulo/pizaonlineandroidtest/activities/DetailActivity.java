@@ -1,10 +1,11 @@
 package se.paulo.pizaonlineandroidtest.activities;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,6 +20,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private TextView tvName, tvDescription, tvPrice;
     private ImageView itemImage;
+    private static final String PHOTOS_BASE_URL = "http://560057.youcanlearnit.net/services/images/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +45,15 @@ public class DetailActivity extends AppCompatActivity {
 
         InputStream inputStream = null;
         try {
-            String imageFile = item.getImage();
-            inputStream = getAssets().open(imageFile);
-            Drawable d = Drawable.createFromStream(inputStream, null);
-            itemImage.setImageDrawable(d);
-        } catch (IOException e) {
+
+            String url = PHOTOS_BASE_URL + item.getImage();
+            Picasso.with(this)
+                    .load(url)
+                    .resize(70, 70)
+                    .into(itemImage);
+
+
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (inputStream != null) {

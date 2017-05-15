@@ -9,10 +9,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="Apple Pie"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/apple_pie"
         tools:ignore="HardcodedText" />
 

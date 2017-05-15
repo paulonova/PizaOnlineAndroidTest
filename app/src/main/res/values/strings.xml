@@ -4,4 +4,6 @@
 
     <string name="pref_display_grid">pref_display_grid</string>
     <string name="display_in_grid">Display in grid</string>
+    <string name="place_you_go">Stockholm</string>
+    <string name="date_you_go">öppettider</string>
 </resources>
