@@ -49,7 +49,6 @@ public class DetailActivity extends AppCompatActivity {
             String url = PHOTOS_BASE_URL + item.getImage();
             Picasso.with(this)
                     .load(url)
-                    .resize(70, 70)
                     .into(itemImage);
 
 
